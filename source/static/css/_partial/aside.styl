@@ -1,0 +1,94 @@
+aside
+  position fixed
+  top 50%
+  left 50%
+  width 40px
+  height 316px
+  margin -100px 0 0 400px
+  z-index 0
+
+  .btn
+    margin-bottom 10px
+
+  .page
+    li
+      padding 25px 0
+
+  ul
+    border 1px solid #505157
+    border-radius 4px
+    li
+      font 1.5em font-icon
+      position relative
+      min-height 50px
+      margin-bottom -1px
+      border-bottom 1px solid #505157
+      cursor pointer
+      color #616267
+
+    li:last-child
+      border-bottom none
+
+    li:hover, a:hover
+      color #c4612c
+
+    li:before
+      position absolute
+      left 50%
+      top 50%
+      margin -12px 0 0 -10px
+
+    li.icon-screenshot:before
+      content '\f05b'
+
+    li.icon-fullscreen:before
+      content '\f0b2'
+
+    li.icon-arrow-up
+      display none
+      &:before
+        content '\f062'
+
+    li.icon-list-ol:before
+      margin-left -12px
+      content '\f0cb'
+
+    li.icon-comments:before
+      margin -14px 0 0 -12px
+      content '\f086'
+
+    li
+      a
+        display block
+        width 24px
+        height 24px
+        margin 14px 0 0 12px
+        color #616267
+
+    li.icon-prev
+      a:before
+        margin-left -2px
+        content '\f053'
+
+    li.icon-next
+      a:before
+        content '\f054'
+
+.category-list
+  font-size 0.9em
+  padding 15px 20px
+.category-list-count
+  margin-left 8px
+  font-size 0.8em
+  color color-meta
+  &:before
+    content '('
+  &:after
+    content ')'
+
+ul, ol, dl
+  list-style none
+  ul, ol, dl
+    margin-left 20px
+    li:before
+      content '> '

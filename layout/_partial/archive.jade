@@ -1,0 +1,16 @@
+- var title = '', classes = 'archives-title';
+if is_category()
+  title = page.category;
+  classes += ' category';
+else if is_tag()
+  title = page.tag;
+  classes += ' tag';
+else if is_archive()
+  if is_year()
+    title = page.year;
+  else if is_month()
+    title = page.year + page.month;
+  
+if title
+  h2(class= classes)
+    span= title

@@ -1,0 +1,23 @@
+menu:
+  前端工程: /engineer
+  数据银行: /access
+  海量服务: /ocean
+  支付革命: /warfare
+  About:   /about
+# rss: /atom.xml
+
+archive_date_format: MMM DD
+
+fancybox: true
+
+duoshuo_shortname:
+
+google_analytics:
+
+fork: ronesam/hexo-theme-zero/
+
+cdn:
+  prefix: http://7xo6lp.com1.z0.glb.clouddn.com/static/
+  favicon: img/favicon.ico
+  fork: img/fork.png
+  lib: //cdn.bootcss.com/
