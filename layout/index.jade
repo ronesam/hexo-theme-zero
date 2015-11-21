@@ -24,7 +24,7 @@ else if is_post()
   != partial('_partial/aside')
 else if is_category()
   .summary
-     != list_categories(site.categories) 
+     //-!= list_categories(page.categories) 
 else
   //- _source之外的页面（非markdown），例如404等。
   != page.content
