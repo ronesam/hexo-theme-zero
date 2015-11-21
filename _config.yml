@@ -17,7 +17,8 @@ google_analytics:
 fork: ronesam/hexo-theme-zero/
 
 cdn:
-  prefix: http://7xo6lp.com1.z0.glb.clouddn.com/static/
+  #prefix: http://7xo6lp.com1.z0.glb.clouddn.com/static/
+  prefix: /static/
   favicon: img/favicon.ico
   fork: img/fork.png
   lib: //cdn.bootcss.com/

@@ -2,7 +2,7 @@
 
 > 类书籍化的hexo主题。
 
-> A theme like book for [Hexo]. Designed by [hexo-theme-modernist].
+> A hexo theme base on jade and stylus like a book. Designed by [hexo-theme-modernist].
 
 [Demo the Theme]
 

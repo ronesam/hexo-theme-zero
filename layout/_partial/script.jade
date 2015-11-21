@@ -1,0 +1,17 @@
+!= js([theme.cdn.lib + 'jquery/2.1.4/jquery.min.js', theme.cdn.lib + 'jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js', theme.cdn.prefix + 'js/hexo-theme-zero.js'])
+
+if is_post()
+  != js(theme.cdn.prefix + 'js/jquery.fullscreen.js')
+
+if (theme.fancybox)
+  != css(theme.cdn.lib+'fancybox/2.1.5/jquery.fancybox.min.css')
+  != js(theme.cdn.lib+'fancybox/2.1.5/jquery.fancybox.min.js')
+
+script.
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+
+if theme.fork
+  a(href="https://github.com/" + theme.fork, target="_blank")
+    img(style="position: absolute; top: 0; left: 0; border: 0;", src= theme.cdn.prefix + theme.cdn.fork, alt="Fork me on GitHub")

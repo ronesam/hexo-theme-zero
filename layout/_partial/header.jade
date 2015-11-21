@@ -1,0 +1,17 @@
+header#header
+  .title
+    h1
+      a(href= config.root)= config.title
+    if config.subtitle
+    p
+      a(href= config.root)= config.subtitle
+  nav.nav
+    ul
+      each v, k in theme.menu
+        li
+          a(href= v)= k
+      if theme.rss
+        li
+          a(href= theme.rss)= __('rss_title')
+    .clearfix
+  .clearfix

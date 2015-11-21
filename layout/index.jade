@@ -1,1 +1,30 @@
-!= partial('_partial/archive', {pagination: 2, index: true})
+- var title = '', classes = 'archives-title';
+if is_category()
+  - title = page.category;
+  - classes += ' category';
+else if is_tag()
+  - title = page.tag;
+  - classes += ' tag';
+else if is_archive()
+  if is_year()
+    - title = page.year;
+  else if is_month()
+    - title = page.year + page.month;
+  
+if title
+  h2(class= classes)
+    span= title
+
+if is_home()
+  each post in page.posts.toArray()
+    != partial('_partial/article', {post: post, index: true})
+  != partial('_partial/pagination')
+else if is_post()
+  != partial('_partial/article', {post: page, index: false})
+  != partial('_partial/aside')
+else if is_category()
+  .summary
+     != list_categories(site.categories) 
+else
+  //- _source之外的页面（非markdown），例如404等。
+  != page.content

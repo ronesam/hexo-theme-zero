@@ -1,0 +1,7 @@
+h1.title
+  if post.link
+    a(href= post.link, target='_blank')= post.title
+  else if index
+    a(href= config.root + post.path)= post.title
+  else
+    | #{post.title}

@@ -1,0 +1,10 @@
+doctype html
+html
+  != partial('_partial/head')
+  body
+    .wrapper
+      != partial('_partial/header')
+      .content!= body
+    footer#footer
+      != partial('_partial/footer')
+    != partial('_partial/script')

@@ -1,0 +1,15 @@
+aside
+  ul.btn
+    li(title="回到顶部", class="icon-arrow-up")
+    li(title="全屏", class="icon-fullscreen")
+    li(title="目录", class="icon-list-ol")
+    li(title="评论", class="icon-comments")
+
+  if (page.prev || page.next)
+    ul.page
+      if page.prev
+        li(title= page.prev.title, class="icon-prev")
+          a(href= url_for(page.prev.path))   
+      if page.next
+        li(title= page.next.title, class="icon-next")
+          a(href= url_for(page.next.path))

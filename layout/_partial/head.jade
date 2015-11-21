@@ -1,0 +1,35 @@
+head
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="chrome=1")
+  
+  - var title = page.title;
+  if is_archive()
+    - title = __('archive_title');
+    if is_month()
+      - title += ': ' + page.year + '/' + page.month;
+    else if is_year()
+      - title += ': ' + page.year;
+  else if is_category()
+    - title = __('category_title') + ': ' + page.category;
+  else if is_tag()
+    - title = __('tag_title') + ': ' + page.tag;
+
+  if title
+    title= title + ': ' + config.title
+  else
+    title= config.title
+
+  meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+
+  if config.author
+    meta(name="author", content= config.author)
+
+  != open_graph()
+
+  if theme.cdn.favicon
+    link(rel="icon", type="image/x-icon", href= theme.cdn.prefix + theme.cdn.favicon)
+
+  != css(theme.cdn.prefix + 'css/style.css')
+
+  if theme.rss
+    link(rel="alternate", href= theme.rss, title= config.title, type="application/atom+xml")
