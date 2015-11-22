@@ -20,8 +20,11 @@ if is_home()
     != partial('_partial/article', {post: post, index: true})
   != partial('_partial/pagination')
 else if is_post()
-  != partial('_partial/article', {post: page, index: false})
-  != partial('_partial/aside')
+  if page.summary
+    != partial('_partial/summary')
+  else
+    != partial('_partial/article', {post: page, index: false})
+    != partial('_partial/aside')
 else if is_category()
   .summary
      //-!= list_categories(page.categories) 
