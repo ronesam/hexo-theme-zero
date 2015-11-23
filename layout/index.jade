@@ -25,9 +25,15 @@ else if is_post()
   else
     != partial('_partial/article', {post: page, index: false})
     != partial('_partial/aside')
-else if is_category()
-  .summary
-     //-!= list_categories(page.categories) 
+else if is_category() || is_tag() || is_archive()
+  //- 不喜欢目录、标签、存档的方式，简单实现如下，重点是上面的summary。
+  section.archives-wrapper
+    if !title
+      h2.archives-title.archives-year
+        a
+    .archives
+      each post in page.posts.toArray()
+        != partial('_partial/archive', {post: post})
 else
   //- _source之外的页面（非markdown），例如404等。
   != page.content
