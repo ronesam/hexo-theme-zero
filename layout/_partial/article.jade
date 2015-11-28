@@ -18,5 +18,6 @@ article(class= post.layout)
           a(href= config.root + post.path +"#more", class="more-link")= __('excerpt_title')
     else
       != partial('post/category')
-      != partial('post/tag')      
+      != partial('post/tag')
+      != partial('post/share')       
     .clearfix

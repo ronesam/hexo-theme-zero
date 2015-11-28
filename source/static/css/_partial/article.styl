@@ -14,6 +14,11 @@ article
       &:before
         content '\f0f6'
 
+  &.summary
+    .icon
+      &:before
+        content '\f03a'
+
   &.photo
     .icon
       &:before
@@ -302,7 +307,7 @@ article
         &:before
           content '\f075'
 
-    .categories, .tags
+    .categories, .tags, .shares
       margin 5px 0
       &:before
         font 1.1em font-icon
@@ -313,3 +318,25 @@ article
 
     .tags:before
       content '\f02b'
+      
+    .shares:before
+      content '\f1d7'
+      
+article.summary
+  ul
+    margin-bottom 0
+    li
+      border-bottom 1px dashed color-background
+      &:before
+        display none
+      &:last-child
+        border-bottom none  
+      a
+        display block
+        padding 14px 0 12px   
+    ul
+      border-top 1px dashed color-background
+      li
+        margin-left 2em
+        &:last-child
+          border-bottom none
