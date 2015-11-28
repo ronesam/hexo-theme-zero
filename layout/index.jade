@@ -21,7 +21,8 @@ if is_home()
   != partial('_partial/pagination')
 else if is_post()
   != partial('_partial/article', {post: page, index: false})
-  != partial('_partial/aside')
+  if 'summary' !== page.layout
+    != partial('_partial/aside')
 else if is_category() || is_tag() || is_archive()
   //- 不喜欢目录、标签、存档的方式，简单实现如下，重点是上面的summary。
   section.archives-wrapper
