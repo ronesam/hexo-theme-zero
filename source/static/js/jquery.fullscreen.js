@@ -142,39 +142,3 @@
         return this;
     };
 }(jQuery));
-//--------------以下是相关调用--------------------
-$('.icon-fullscreen').click(function(e){
-    var _btn_fullscreen = $(this);
-    $('.wrapper').fullScreen({
-        'callback': function(fullscreen){
-            if(!fullscreen){
-                _btn_fullscreen.attr('title', '全屏').addClass('icon-fullscreen').removeClass('icon-screenshot');
-            }
-        }
-    });
-
-    _btn_fullscreen.attr('title', '取消全屏').addClass('icon-screenshot').removeClass('icon-fullscreen');
-
-    $('.fullscreen').scroll(function() {
-        var top = $('.fullscreen').scrollTop();
-        if (top > 1000)
-            $('.icon-arrow-up').show();
-        else
-            $('.icon-arrow-up').hide();
-    });
-});
-
-$(function () {
-    $(window).scroll(function () {
-        show($(window).scrollTop());
-    });
-    var show = function(top){
-        if (top > 1000)
-            $('.icon-arrow-up').show();
-        else
-            $('.icon-arrow-up').hide();
-    };
-    $('.icon-arrow-up').click(function() {
-        $('html, body, .fullscreen').animate({scrollTop: 0}, 1000);
-    });
-});

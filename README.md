@@ -26,6 +26,9 @@ git pull
 ```
 
 ## Modified
+### 2.1.1
+* script分离，按需加载
+
 ### 2.1.0
 * 新增summary布局
 

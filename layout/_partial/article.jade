@@ -1,10 +1,9 @@
 article(class= post.layout)
   header
-    if post.layout != 'page'
-      .icon
-      != partial('post/date', { date_format: config.date_format })
+    .icon
+    != partial('post/date', {date_format: config.date_format})
     != partial('post/title')
-  if post.photos && post.photos.length > 0
+  if !index && post.photos && post.photos.length > 0
     != partial('post/gallery')
   .entry
     if post.excerpt && index

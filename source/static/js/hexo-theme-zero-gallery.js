@@ -1,20 +1,4 @@
 (function($){
-  // Caption
-  $('.entry').each(function(i){
-    $(this).find('img:not([class*="no-fancybox"])').each(function(){
-      var alt = this.alt;
-
-      if (alt){
-        $(this).after('<span class="caption">' + alt + '</span>');
-      }
-
-      if ($(this).parent('a').length === 0) {
-        $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery' + i + '" />');
-      }
-    });
-  });
-
-  // Gallery
   var play = function(parent, item, callback){
     var width = parent.width();
 
@@ -64,29 +48,4 @@
       }
     });
   });
-
-  $('.icon-list-ol').click(function (){
-    alert(1);
-  });
-  $('.icon-comments').click(function (){
-    alert(2);
-  });
 })(jQuery);
-
-var metas = document.getElementsByTagName('meta');
-var i;
-if (navigator.userAgent.match(/iPhone/i)) {
-  for (i=0; i<metas.length; i++) {
-    if (metas[i].name == "viewport") {
-      metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
-    }
-  }
-  document.addEventListener("gesturestart", gestureStart, false);
-}
-function gestureStart() {
-  for (i=0; i<metas.length; i++) {
-    if (metas[i].name == "viewport") {
-      metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
-    }
-  }
-}
