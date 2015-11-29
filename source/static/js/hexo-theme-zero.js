@@ -64,6 +64,13 @@
       }
     });
   });
+
+  $('.icon-list-ol').click(function (){
+    alert(1);
+  });
+  $('.icon-comments').click(function (){
+    alert(2);
+  });
 })(jQuery);
 
 var metas = document.getElementsByTagName('meta');

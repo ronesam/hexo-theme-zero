@@ -157,19 +157,19 @@ $('.icon-fullscreen').click(function(e){
 
     $('.fullscreen').scroll(function() {
         var top = $('.fullscreen').scrollTop();
-        if ( top > 1000)
+        if (top > 1000)
             $('.icon-arrow-up').show();
         else
             $('.icon-arrow-up').hide();
     });
 });
 
-$(function() {
-    $(window).scroll(function() {
+$(function () {
+    $(window).scroll(function () {
         show($(window).scrollTop());
     });
     var show = function(top){
-        if ( top > 1000)
+        if (top > 1000)
             $('.icon-arrow-up').show();
         else
             $('.icon-arrow-up').hide();

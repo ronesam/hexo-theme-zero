@@ -3,14 +3,13 @@
 if is_post()
   != js(theme.cdn.prefix + 'js/jquery.fullscreen.js')
 
-if (theme.fancybox)
+if (theme.fancybox && page.fancybox)
   != css(theme.cdn.lib+'fancybox/2.1.5/jquery.fancybox.min.css')
   != js(theme.cdn.lib+'fancybox/2.1.5/jquery.fancybox.min.js')
-
-script.
-  (function($){
-    $('.fancybox').fancybox();
-  })(jQuery);
+  script.
+    (function($){
+      $('.fancybox').fancybox();
+    })(jQuery);
 
 if theme.fork
   a(href="https://github.com/" + theme.fork, target="_blank")
