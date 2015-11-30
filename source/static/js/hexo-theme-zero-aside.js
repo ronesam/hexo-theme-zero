@@ -32,16 +32,19 @@ $(function() {
   });
 
   //No.3 目录
-  var icon_summary = $('.icon-list-ol');
-  icon_summary.click(function() {
-
+  $(document).on('opening', '[data-remodal-id=summary]', function () {
+    var summary = window.location.pathname.split('/')[1];
+    var url = '//' + window.location.host + '/' + summary + '/summary/index.json';
+    console.log(url);
+    $.getJSON(url, function(json) {
+      $('article.summary').html(json.summary);
+    })
   });
 
   //No.4 评论
-  var icon_comments = $('.icon-comments');
-  icon_comments.click(function() {
-    
-  })
+  $(document).on('opening', '[data-remodal-id=comment]', function () {
+    console.log();
+  });
 });
 
 /*!
