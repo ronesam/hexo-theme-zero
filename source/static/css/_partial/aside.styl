@@ -49,11 +49,11 @@ aside
       &:before
         content '\f062'
 
-    li.icon-list-ol:before
+    li.icon-summary:before
       margin-left -12px
       content '\f03a'
 
-    li.icon-comments:before
+    li.icon-comment:before
       margin -14px 0 0 -12px
       content '\f086'
 
@@ -92,3 +92,22 @@ ul, ol, dl
     margin-left 20px
     li:before
       content '> '
+
+.summary
+  ul
+    margin-bottom 0
+    li
+      border-bottom 1px dashed color-background
+      &:before
+        display none
+      &:last-child
+        border-bottom none  
+      a
+        display block
+        padding 14px 0 12px   
+    ul
+      border-top 1px dashed color-background
+      li
+        margin-left 2em
+        &:last-child
+          border-bottom none
