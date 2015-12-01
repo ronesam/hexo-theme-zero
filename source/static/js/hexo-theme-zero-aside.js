@@ -33,17 +33,26 @@ $(function() {
 
   //No.3 目录
   $(document).on('opening', '[data-remodal-id=summary]', function () {
-    var summary = window.location.pathname.split('/')[1];
-    var url = '//' + window.location.host + '/' + summary + '/summary/index.json';
-    console.log(url);
+    var arr_path = window.location.pathname.split('/');
+    var summary_path = arr_path[1];
+    var url = '//' + window.location.host + '/' + summary_path + '/summary/index.json';
     $.getJSON(url, function(json) {
-      $('article.summary').html(json.summary);
+      //倒数第二个才是文件名
+      var file_name = decodeURI(arr_path[arr_path.length - 2])
+      //当前文件标红
+      var summary = json.summary.replace('>' + file_name + '<', '><span style="color:orange">' + file_name + '</span><');
+      $('article.summary').html(summary);
     })
   });
 
   //No.4 评论
-  $(document).on('opening', '[data-remodal-id=comment]', function () {
-    console.log();
+  $(document).on('opening', '[data-remodal-id=comment]', function () {    
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
   });
 });
 

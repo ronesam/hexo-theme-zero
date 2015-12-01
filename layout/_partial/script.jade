@@ -4,6 +4,9 @@ if is_post() && 'summary' != page.layout
   != js(theme.cdn.lib + 'jquery/2.1.4/jquery.min.js')
   != js(theme.cdn.lib + 'remodal/1.0.5/remodal.min.js')
   != js(theme.cdn.prefix + 'js/hexo-theme-zero-aside.js')
+  if theme.duoshuo_shortname
+    script.
+      var duoshuoQuery = {short_name: '#{theme.duoshuo_shortname}'};
   if page.photos && page.photos.length > 0
     //如果有画廊则启动图片载入判断（确保图片加载完成）
     != js(theme.cdn.lib + 'jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js')

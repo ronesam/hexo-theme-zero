@@ -3,7 +3,8 @@ aside
     li(title="回到顶部", class="icon-arrow-up")
     li(title="全屏", class="icon-fullscreen")
     li(title="目录", class="icon-summary", data-remodal-target="summary")
-    li(title="评论", class="icon-comment", data-remodal-target="comment")
+    if theme.duoshuo_shortname
+      li(title="评论", class="icon-comment", data-remodal-target="comment")
 
   if (page.prev || page.next)
     ul.page
@@ -19,7 +20,9 @@ aside
   h1 目录
   article.summary
 
-.remodal(data-remodal-id='comment')
-  button.remodal-close(data-remodal-action='close')
-  h1 评论
-  p
+if theme.duoshuo_shortname
+  .remodal(data-remodal-id='comment')
+    button.remodal-close(data-remodal-action='close')
+    h1 评论
+    article.comment
+      .ds-thread(data-thread-key= theme.duoshuo_shortname, data-title= page.title, data-url= url_for(page.path))

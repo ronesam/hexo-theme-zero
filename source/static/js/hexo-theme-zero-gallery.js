@@ -24,28 +24,33 @@
       loading = false;
     });
 
-    $this.on('click', '.prev', function(){
-      if (!loading){
-        var next = (current - 1) % all;
-        loading = true;
+    if(all > 1) {
+      $this.on('click', '.prev', function(){
+        if (!loading){
+          var next = (current - 1) % all;
+          loading = true;
 
-        play($this, photoset.eq(next), function(){
-          photoset.eq(current).animate({opacity: 0}, 500);
-          loading = false;
-          current = next;
-        });
-      }
-    }).on('click', '.next', function(){
-      if (!loading){
-        var next = (current + 1) % all;
-        loading = true;
+          play($this, photoset.eq(next), function(){
+            photoset.eq(current).animate({opacity: 0}, 500);
+            loading = false;
+            current = next;
+          });
+        }
+      }).on('click', '.next', function(){
+        if (!loading){
+          var next = (current + 1) % all;
+          loading = true;
 
-        play($this, photoset.eq(next), function(){
-          photoset.eq(current).animate({opacity: 0}, 500);
-          loading = false;
-          current = next;
-        });
-      }
-    });
+          play($this, photoset.eq(next), function(){
+            photoset.eq(current).animate({opacity: 0}, 500);
+            loading = false;
+            current = next;
+          });
+        }
+      });
+    } else {
+      $('.control').hide();
+    }
+
   });
 })(jQuery);

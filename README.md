@@ -27,6 +27,7 @@ git pull
 
 ## Modified
 ### 2.1.0
+* 评论接入多说
 * 模态加载summary
 * 全屏代码更换为cdn库
 * script分离，按需加载

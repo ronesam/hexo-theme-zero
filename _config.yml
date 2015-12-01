@@ -8,9 +8,7 @@ menu:
 
 archive_date_format: MMM DD
 
-duoshuo_shortname:
-
-google_analytics:
+duoshuo_shortname: ronesam
 
 fork: ronesam/hexo-theme-zero/
 
