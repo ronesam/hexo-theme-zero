@@ -49,6 +49,9 @@ aside
       &:before
         content '\f062'
 
+    li.icon-toc:before
+      content '\f0ca'
+
     li.icon-summary:before
       margin-left -12px
       content '\f03a'
@@ -93,9 +96,9 @@ ul, ol, dl
     li:before
       content '> '
 
-article.summary
+article.summary, article.toc
   text-align left
-  ul
+  ul, ol
     margin-bottom 0
     li
       border-bottom 1px dashed color-background
@@ -106,7 +109,7 @@ article.summary
       a
         display block
         padding 14px 0 12px   
-    ul
+    ul, ol
       border-top 1px dashed color-background
       margin-left 0
       li

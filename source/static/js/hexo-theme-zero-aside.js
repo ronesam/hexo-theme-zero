@@ -31,7 +31,24 @@ $(function() {
     })    
   });
 
-  //No.3 目录
+  //No.3 导引
+  var toc = $('[data-remodal-id=toc]');
+  var inst = toc.remodal();
+  toc.click(function () {
+    inst.close();
+  });
+
+  //No.4 评论
+  $(document).on('opening', '[data-remodal-id=comment]', function () {    
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  });
+
+  //No.5 目录
   $(document).on('opening', '[data-remodal-id=summary]', function () {
     var arr_path = window.location.pathname.split('/');
     var summary_path = arr_path[1];
@@ -43,16 +60,6 @@ $(function() {
       var summary = json.summary.replace('>' + file_name + '<', '><span style="color:orange">' + file_name + '</span><');
       $('article.summary').html(summary);
     })
-  });
-
-  //No.4 评论
-  $(document).on('opening', '[data-remodal-id=comment]', function () {    
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';
-    ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
   });
 });
 
