@@ -1,6 +1,6 @@
 aside
   ul.btn    
-    li(title="导引", class="icon-toc", data-remodal-target="toc")
+    li(title="索引", class="icon-toc", data-remodal-target="toc")
     if theme.duoshuo_shortname
       li(title="评论", class="icon-comment", data-remodal-target="comment")
     li(title="全屏", class="icon-fullscreen")    
@@ -14,19 +14,19 @@ aside
       li(title= page.next.title, class="icon-next")
         a(href= url_for(page.next.path))
 
-.remodal(data-remodal-id='toc')
+.remodal(data-remodal-id='toc', data-remodal-options="hashTracking: false")
   button.remodal-close(data-remodal-action='close')
   h1 索引
   article.toc
     != toc(page.content)
 
-.remodal(data-remodal-id='summary')
+.remodal(data-remodal-id='summary', data-remodal-options="hashTracking: false")
   button.remodal-close(data-remodal-action='close')
   h1 目录
   article.summary
 
 if theme.duoshuo_shortname
-  .remodal(data-remodal-id='comment')
+  .remodal(data-remodal-id='comment', data-remodal-options="hashTracking: false")
     button.remodal-close(data-remodal-action='close')
     h1 评论
     article.comment
