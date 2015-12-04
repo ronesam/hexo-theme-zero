@@ -10,13 +10,16 @@ article(class= post.layout)
       != post.excerpt
     else
       != post.content
-  footer(class= index?'end-sep': '')
-    if index
-      if post.excerpt
-        .alignleft
-          a(href= config.root + post.path +"#more", class="more-link")= __('excerpt_title')
-    else
-      != partial('post/category')
-      != partial('post/tag')
+  if !index && 'summary' !== post.layout
+    footer
+      if post.categories && post.categories.length > 0
+        != partial('post/category')
+      if post.tags && post.tags.length > 0
+        != partial('post/tag')
       != partial('post/share')       
     .clearfix
+//- 为解决首页最后一行分隔线的问题我也是拼了         
+if index && post.excerpt
+  footer(class= 'end-sep')
+    .alignleft
+      a(href= config.root + post.path +"#more", class="more-link")= __('excerpt_title')

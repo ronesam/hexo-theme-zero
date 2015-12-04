@@ -1,10 +1,14 @@
+- var github_url = theme.fork? 'http://github.com/' + theme.fork: config.root;
+- var github_class = theme.fork? 'fa fa-github-alt': '';
+- var github_target = theme.fork? '_blank': ''
+
 header#header
   .title
     h1
       a(href= config.root)= config.title
     if config.subtitle
-    p
-      a(href= config.root)= config.subtitle
+      p(class= github_class)
+        a(href= github_url, target= github_target)= config.subtitle
   nav.nav
     ul
       each v, k in theme.menu

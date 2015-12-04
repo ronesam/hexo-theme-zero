@@ -29,6 +29,9 @@ head
   if theme.cdn.favicon
     link(rel="icon", type="image/x-icon", href= theme.cdn.prefix + theme.cdn.favicon)
 
+  != css(theme.cdn.lib + 'bootstrap/3.3.5/css/bootstrap.min.css')
+  != css(theme.cdn.lib + 'bootstrap/3.3.5/css/bootstrap-theme.min.css')
+  != css(theme.cdn.lib + 'font-awesome/4.4.0/css/font-awesome.min.css')  
   != css(theme.cdn.prefix + 'css/style.css')
 
   if theme.rss

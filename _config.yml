@@ -10,11 +10,12 @@ archive_date_format: MMM DD
 
 duoshuo_shortname: ronesam
 
-fork: ronesam/hexo-theme-zero/
+#Your github account like: ronesam
+fork: ronesam
 
 cdn:
   #prefix: http://7xo6lp.com1.z0.glb.clouddn.com/static/
   prefix: /static/
+  #prefix + favicon is real url
   favicon: img/favicon.ico
-  fork: img/fork.png
   lib: //cdn.bootcss.com/

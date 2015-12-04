@@ -50,15 +50,19 @@ $(function() {
 
   //No.5 目录
   $(document).on('opening', '[data-remodal-id=summary]', function () {
-    var arr_path = window.location.pathname.split('/');
-    var summary_path = arr_path[1];
-    var url = '//' + window.location.host + '/' + summary_path + '/summary/index.json';
+    var path = window.location.pathname;
+    var arr_path = path.split('/');
+    var arr_url = [];
+    for(var i = 0, len = arr_path.length - 2; i < len; i++) {
+      arr_url.push(arr_path[i]);
+    }
+    var url = '//' + window.location.host + arr_url.join('/') + '/summary/index.json';
     $.getJSON(url, function(json) {
-      //倒数第二个才是文件名
-      var file_name = decodeURI(arr_path[arr_path.length - 2])
-      //当前文件标红
-      var summary = json.summary.replace('>' + file_name + '<', '><span style="color:orange">' + file_name + '</span><');
-      $('article.summary').html(summary);
+      //标红当前页，需要先把内容插件去再说……
+      $('article.summary').html(json.summary);
+      var option = $('#summary a[href="' + path + '"]');
+      var file_name = option.html();
+      option.html('<span style="color:orange">' + file_name + '</span>');
     })
   });
 });

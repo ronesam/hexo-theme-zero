@@ -2,41 +2,30 @@ aside
   position fixed
   top 50%
   left 50%
-  width 40px
-  height 316px
-  margin -100px 0 0 400px
+  margin -100px 0 0 500px
   z-index 0
 
-  .btn
+  .action
+    li 
+      padding 12px 10px 12px 12px
     margin-bottom 10px
 
   .page
     li
-      padding 25px 0
+      padding 24px 10px 24px 12px
 
   ul
     border 1px solid #505157
+    border-bottom none
     border-radius 4px
     li
-      font 1.5em font-icon
-      position relative
-      min-height 50px
-      margin-bottom -1px
       border-bottom 1px solid #505157
-      cursor pointer
-      color #616267
-
-    li:last-child
-      border-bottom none
-
-    li:hover, a:hover
-      color #c4612c
-
-    li:before
-      position absolute
-      left 50%
-      top 50%
-      margin -12px 0 0 -10px
+      &, a, a:visited
+        font 1.5em font-icon      
+        cursor pointer
+        color #616267
+        &:hover
+          color #c4612c
 
     li.icon-screenshot:before
       content '\f05b'
@@ -53,24 +42,14 @@ aside
       content '\f0ca'
 
     li.icon-summary:before
-      margin-left -12px
       content '\f03a'
 
     li.icon-comment:before
-      margin -14px 0 0 -12px
       content '\f086'
 
-    li
-      a
-        display block
-        width 24px
-        height 24px
-        margin 14px 0 0 12px
-        color #616267
-
     li.icon-prev
+      padding-left: 10px
       a:before
-        margin-left -2px
         content '\f053'
 
     li.icon-next
@@ -80,6 +59,7 @@ aside
 .category-list
   font-size 0.9em
   padding 15px 20px
+  
 .category-list-count
   margin-left 8px
   font-size 0.8em
@@ -102,23 +82,47 @@ article.summary, article.toc
     margin-bottom 0
     li
       border-bottom 1px dashed color-background
+      padding 7px 0 5px  
+      &:first-child
+        padding-top 0
       &:before
         display none
       &:last-child
         border-bottom none
-      a
-        display block
-        padding 14px 0 12px   
+        padding-bottom 0       
     ul, ol
       border-top 1px dashed color-background
       margin-left 0
+      margin-top 5px
       li
         font-size 0.93em
         margin-left 2em
+        &:first-child
+          padding-top 7px
+  blockquote
+    border-radius 8px
+    margin 0 -30px 20px
+    padding 15px 20px 1px 40px
+    font-style italic
+    background #ccc
+    background rgba(0, 0, 0, 0.06)
+    color #222
+    p
+      margin-bottom 14px
+    footer
+      padding 0 0 14px 0
+      border-top none
+      text-align right
+      cite
+        &:before
+          content '《'
+          padding-left 1em
+        &:after
+          content '》'
 
 .remodal
   border-radius 8px
   .summary
-    padding 15px 30px 0
+    margin 16px 16px 0
     footer
       text-align right

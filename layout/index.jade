@@ -18,7 +18,8 @@ if title
 if is_home()
   each post in page.posts.toArray()
     != partial('_partial/article', {post: post, index: true})
-  != partial('_partial/pagination')
+  if page.prev || page.next 
+    != partial('_partial/pagination')
 else if is_post()
   != partial('_partial/article', {post: page, index: false})
   if 'summary' !== page.layout
