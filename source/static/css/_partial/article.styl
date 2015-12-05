@@ -164,29 +164,6 @@ article
     h3, h4, h5, h6
       color #494949
 
-    blockquote
-      border-radius 8px
-      margin 0 -30px 20px
-      padding 18px 20px 1px 40px
-      border-left none
-      font-style italic
-      font-size 1em
-      background #ccc
-      background rgba(0, 0, 0, 0.06)
-      color #222
-      p
-        margin-bottom 14px
-      footer
-        padding 0 0 14px 0
-        border-top none
-        text-align right
-        cite
-          &:before
-            content '《'
-            padding-left 1em
-          &:after
-            content '》'
-
     img, video
       max-width 98%
       border-radius 3px
@@ -229,6 +206,8 @@ article
       margin 0 -30px 16px
       white-space pre-wrap
       word-wrap break-word
+      border-radius 8px
+      border none      
 
       @media screen and (max-width:580px)
         margin 0 -20px 16px
@@ -307,7 +286,78 @@ article
       
     .shares:before
       content '\f1d7'
-      
+
+ul, ol, dl
+  list-style none
+  ul, ol, dl
+    margin-left 20px
+    li:before
+      content '> '
+
+article.post
+  ol, ul
+    li
+      margin 0 2em 1em
+      &:before
+        margin-right 5px
+  ol li:before
+    content '✿'
+  ul li:before
+    content '❀'
+  p em
+    color color-strong
+    font-weight 700
+    &:before
+      margin-right 5px
+      content '★'
+
+article .entry,article.summary, article.toc
+  blockquote
+    margin 0 -30px 20px
+    padding 18px 20px 1px 40px
+    border-left none
+    font-style italic
+    font-size 1em
+    background #ccc
+    background rgba(0, 0, 0, 0.06)
+    color #222
+    p
+      margin-bottom 14px
+    footer
+      padding 0 0 14px 0
+      border-top none
+      text-align right
+      cite
+        &:before
+          content '《'
+          padding-left 1em
+        &:after
+          content '》'
+          
+article.summary, article.toc
+  text-align left
+  ul, ol
+    margin-bottom 0
+    li
+      border-bottom 1px dashed color-background
+      padding 7px 0 5px  
+      &:first-child
+        padding-top 0
+      &:before
+        display none
+      &:last-child
+        border-bottom none
+        padding-bottom 0       
+    ul, ol
+      border-top 1px dashed color-background
+      margin-left 0
+      margin-top 5px
+      li
+        font-size 0.93em
+        margin-left 2em
+        &:first-child
+          padding-top 7px
+
 footer.end-sep
   position relative
   border-bottom 1px dashed color-background

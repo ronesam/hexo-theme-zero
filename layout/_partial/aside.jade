@@ -16,18 +16,18 @@ aside
 
 .remodal(data-remodal-id='toc', data-remodal-options="hashTracking: false")
   button.remodal-close(data-remodal-action='close')
-  h1 索引
+  h3 索引
   article.toc
     != toc(page.content)
 
 .remodal(data-remodal-id='summary', data-remodal-options="hashTracking: false")
   button.remodal-close(data-remodal-action='close')
-  h1 目录
+  h3 目录
   article.summary
 
 if theme.duoshuo_shortname
   .remodal(data-remodal-id='comment', data-remodal-options="hashTracking: false")
     button.remodal-close(data-remodal-action='close')
-    h1 评论
+    h3 评论
     article.comment
       .ds-thread(data-thread-key= theme.duoshuo_shortname, data-title= page.title, data-url= url_for(page.path))

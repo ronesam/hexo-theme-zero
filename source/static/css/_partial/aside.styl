@@ -69,60 +69,12 @@ aside
   &:after
     content ')'
 
-ul, ol, dl
-  list-style none
-  ul, ol, dl
-    margin-left 20px
-    li:before
-      content '> '
-
-article.summary, article.toc
-  text-align left
-  ul, ol
-    margin-bottom 0
-    li
-      border-bottom 1px dashed color-background
-      padding 7px 0 5px  
-      &:first-child
-        padding-top 0
-      &:before
-        display none
-      &:last-child
-        border-bottom none
-        padding-bottom 0       
-    ul, ol
-      border-top 1px dashed color-background
-      margin-left 0
-      margin-top 5px
-      li
-        font-size 0.93em
-        margin-left 2em
-        &:first-child
-          padding-top 7px
-  blockquote
-    border-radius 8px
-    margin 0 -30px 20px
-    padding 15px 20px 1px 40px
-    font-style italic
-    background #ccc
-    background rgba(0, 0, 0, 0.06)
-    color #222
-    p
-      margin-bottom 14px
-    footer
-      padding 0 0 14px 0
-      border-top none
-      text-align right
-      cite
-        &:before
-          content '《'
-          padding-left 1em
-        &:after
-          content '》'
-
 .remodal
   border-radius 8px
-  .summary
-    margin 16px 16px 0
-    footer
-      text-align right
+  article
+    &.summary, &.toc, &.comment   
+      padding 0 20px
+      blockquote
+        border-radius 8px
+        font-size 0.8em
+        margin-top 10px
