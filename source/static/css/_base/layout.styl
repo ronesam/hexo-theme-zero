@@ -3,9 +3,8 @@
   padding 0
   
 html
-  background color-background
   background color-background linear-gradient(#6C7989, #434B55) fixed
-  background-image url(image-background)
+  background-image url(image-background-html)
   background-attachment local
   font-size 16px
 
@@ -14,13 +13,12 @@ body
   margin 0
   font 1em/1.5 font-title
   color color-font
-  font-weight 300
   background transparent
 
 .wrapper
   width page-width
   margin 0 auto
-  background #DEDEDE
+  background color-background
   border-radius 8px
   box-shadow rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(0, 0, 0, 0.45) 0 3px 10px
 
@@ -40,10 +38,9 @@ p
 strong
   color color-strong
   font-weight 700
-  margin 0 5px
 
 .content
-  background linear-gradient(#fafafa, #DEDEDE 700px)
+  background-image url(image-background-body)
   border-radius 0 0 8px 8px
   border-top 1px solid #fff
 
@@ -64,3 +61,14 @@ i.fa
   margin-right 7px
   &:before
     margin-right 0
+
+code
+  background #777 none repeat scroll 0% 0%
+  margin 0 3px
+  padding 2px 6px
+  border-radius 4px
+  box-shadow 0px 1px 3px #000 inset
+  color #FFF
+  text-shadow 0px 1px 1px #000
+  font-size 0.9em
+  font-family Monaco,Courier New,Courier,monospace

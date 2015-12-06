@@ -3,14 +3,16 @@ if is_post() && 'summary' != page.layout
   != css(theme.cdn.lib + 'remodal/1.0.5/remodal-default-theme.min.css')
   != js(theme.cdn.lib + 'jquery/2.1.4/jquery.min.js')
   != js(theme.cdn.lib + 'remodal/1.0.5/remodal.min.js')
-  != js(theme.cdn.prefix + 'js/hexo-theme-zero-aside.js')
+  != js(theme.cdn.lib + 'screenfull.js/2.0.0/screenfull.min.js')
+  //需要先载入全屏的函数，aside里面会重写，加入回调
+  != js(theme.cdn.prefix + 'js/aside.js')
   if theme.duoshuo_shortname
     script.
       var duoshuoQuery = {short_name: '#{theme.duoshuo_shortname}'};
   if page.photos && page.photos.length > 0
     //如果有画廊则启动图片载入判断（确保图片加载完成）
     != js(theme.cdn.lib + 'jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js')
-    != js(theme.cdn.prefix + 'js/hexo-theme-zero-gallery.js')
+    != js(theme.cdn.prefix + 'js/gallery.js')
   if page.fancybox
     //如果文章中有图片（除画廊外），则载入fancybox特效相关代码
     != css(theme.cdn.lib + 'fancybox/2.1.5/jquery.fancybox.min.css')

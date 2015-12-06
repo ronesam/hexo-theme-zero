@@ -30,7 +30,7 @@ article
         content '\f0c1'
 
   .gallery
-    margin 0 -30px 16px
+    margin 0 -30px
     overflow hidden
     position relative
     &:hover
@@ -187,19 +187,14 @@ article
       font-size 0.9em
       &:before
         vertical-align -1px
-        margin-right 5px
+        margin-right 7px
         content '\f0c6'
         font 1.3em font-icon
 
-    code, pre
+    pre
       font-family Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal
       color #333
       font-size 0.8em
-
-    code
-      font-size 0.8em
-
-    pre
       padding 10px 30px
       background #3A3C42
       color #f8f8f2
@@ -212,9 +207,6 @@ article
       @media screen and (max-width:580px)
         margin 0 -20px 16px
         padding 10px 20px
-
-      code
-        color #f8f8f2
 
       li &
         margin-left -60px
@@ -274,9 +266,6 @@ article
     font-size 0.8em
     .categories, .tags, .shares
       margin 5px 0
-      &:before
-        font 1.1em font-icon
-        margin-right 5px
 
     .categories:before
       content '\f07b'
@@ -296,7 +285,7 @@ article.post
     li
       margin 0 2em 1em
       &:before
-        margin-right 5px
+        margin-right 7px
   ol li:before
     content '✿'
   ul li:before

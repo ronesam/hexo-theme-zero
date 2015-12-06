@@ -1,10 +1,11 @@
 aside
   ul.action    
+    li(title="回到顶部", class="icon-arrow-up") 
     li(title="索引", class="icon-toc", data-remodal-target="toc")
     if theme.duoshuo_shortname
       li(title="评论", class="icon-comment", data-remodal-target="comment")
     li(title="全屏", class="icon-fullscreen")
-    li(title="回到顶部", class="icon-arrow-up") 
+
   ul.page  
     if page.prev
       li(title= page.prev.title, class="icon-prev")
