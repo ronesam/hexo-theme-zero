@@ -11,24 +11,24 @@
     color #fff
     font-style italic
 
-@media screen and (max-width: 740px)
+@media screen and (max-width: app-width)
   body
     padding 0
   
-  .wrapper
-    border-radius 0
+  .wrapper    
     box-shadow none
     width 100%
+    .content
+      border-radius 0  
   
   #footer
-    border-radius 0
     margin 0 auto
     padding 10px
     width auto
     text-align left
 
-@media screen and (max-width:580px)
   #header
+    border-radius 0
     padding 15px 20px
     .title
       float none
@@ -41,15 +41,13 @@
     p
       width 100%
 
-  .archives-title
-    padding 0 20px
-
   article
     padding 15px 20px
 
     .gallery
-      margin 0 -20px 16px
+      margin 0 -20px
 
     .entry
       blockquote
         margin 0 -20px 20px
+        padding 18px 20px 1px

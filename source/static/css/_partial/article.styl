@@ -39,7 +39,7 @@ article
       img
         transform scale(1.1, 1.1)
         transition all 0.8s
-        @media screen and (max-width:580px)
+        @media screen and (max-width: app-width)
           transform none
           transition none
 
@@ -86,7 +86,6 @@ article
         right 10px
 
   header
-    border-radius 0
     background none
     position relative
     padding 0
@@ -104,7 +103,7 @@ article
       background #069
       border-radius 100em
       box-shadow 0 0 4px rgba(0, 0, 0, 0.4)
-      @media screen and (max-width: 600px)
+      @media screen and (max-width: app-width)
         display none
       &:before
         position absolute
@@ -138,6 +137,8 @@ article
     font-size 0.95em
     text-align justify
     line-height 1.6
+    @media screen and (max-width: app-width)
+      font-size 18px
 
     h1, h2, h3, h4, h5, h6
       color #222
@@ -157,9 +158,14 @@ article
 
     h1
       font-size 1.75em
+      @media screen and (max-width: app-width)
+        font-size 1.2em
 
     h2
+      font-size 1.5em
       color #393939
+      @media screen and (max-width: app-width)
+        font-size 1em
 
     h3, h4, h5, h6
       color #494949
@@ -204,7 +210,7 @@ article
       border-radius 8px
       border none      
 
-      @media screen and (max-width:580px)
+      @media screen and (max-width: app-width)
         margin 0 -20px 16px
         padding 10px 20px
 
@@ -284,6 +290,8 @@ article.post
   ol, ul
     li
       margin 0 2em 1em
+      @media screen and (max-width: app-width)
+        margin 0 1em 1em
       &:before
         margin-right 7px
   ol li:before
@@ -300,7 +308,7 @@ article.post
 article .entry,article.summary, article.toc
   blockquote
     margin 0 -30px 20px
-    padding 18px 20px 1px 40px
+    padding 18px 30px 1px 30px
     border-left none
     font-style italic
     font-size 1em
