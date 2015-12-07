@@ -30,9 +30,19 @@ head
     link(rel="icon", type="image/x-icon", href= theme.cdn.prefix + theme.cdn.favicon)
 
   != css(theme.cdn.lib + 'bootstrap/3.3.5/css/bootstrap.min.css')
-  != css(theme.cdn.lib + 'bootstrap/3.3.5/css/bootstrap-theme.min.css')
-  != css(theme.cdn.lib + 'font-awesome/4.4.0/css/font-awesome.min.css')  
+  != css(theme.cdn.lib + 'font-awesome/4.4.0/css/font-awesome.min.css') 
+  if is_post() && 'summary' != page.layout 
+    != css(theme.cdn.lib + 'remodal/1.0.5/remodal.min.css')
+    != css(theme.cdn.lib + 'remodal/1.0.5/remodal-default-theme.min.css')
+  if page.fancybox
+    //如果文章中有图片（除画廊外），则载入fancybox特效相关样式
+    != css(theme.cdn.lib + 'fancybox/2.1.5/jquery.fancybox.min.css')
+
   != css(theme.cdn.prefix + 'css/style.css')
+  
+  //- jquery提到最前面，方便页面内调用
+  if is_post() && 'summary' != page.layout
+    != js(theme.cdn.lib + 'jquery/2.1.4/jquery.min.js')
 
   if theme.rss
     link(rel="alternate", href= theme.rss, title= config.title, type="application/atom+xml")
