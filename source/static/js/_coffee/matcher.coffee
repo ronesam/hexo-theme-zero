@@ -1,6 +1,13 @@
 $ ->
+  $('#regexper').click ->
+    $('#svg .root').remove()
+    $('#svg').show()
+    regexper.render '#svg', '//\[([+*])([a-z]+)\] *(\S*)\n/img/'
+    return
+
   time = 0
-  $('#match').on 'click', ->
+
+  $('#match').click ->
     time++
     $('#found-times').html time
     match_times = $ '#match-times'
@@ -29,3 +36,4 @@ $ ->
       match_times.html count
       result.show()
     return
+  return

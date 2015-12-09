@@ -1,7 +1,7 @@
 #右侧边栏相关代码
 $ ->
   #No.1 回到顶部
-  up = $ '.icon-arraw-up'
+  up = $ '.icon-arrow-up'
   up.click ->
     $('html, body, .fullscreen').animate {scrollTop: 0}, 1000
     return
@@ -45,9 +45,8 @@ $ ->
     path = window.location.pathname
     arr_path = path.split '/'
     #过滤掉最后两个，回到上级目录
-    arr_path.splice -2
     arr_url = []
-    arr_url.push dir for dir in arr_path
+    arr_url.push dir for dir, i in arr_path when i < 3
     url = '//' + window.location.host + arr_url.join('/') + '/summary/index.json'
     $.getJSON url, (json)->
       $('article.summary').html json.summary

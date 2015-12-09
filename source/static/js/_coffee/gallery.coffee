@@ -1,4 +1,4 @@
-(($) ->
+$ ->
   play = (parent, item, callback)->
     width = parent.width()
     item.imagesLoaded ->
@@ -47,4 +47,3 @@
       $('.control').hide()
     return
   return
-) jQuery
