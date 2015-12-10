@@ -1,24 +1,33 @@
 $ ->
   $('#regexper').click ->
+    exp = $('#regexp-input').val()
+    if !exp
+      alert 'Enter JavaScript-style regular expression to display'
+      return false
     $('#svg .root').remove()
     $('#svg').show()
-    regexper.render '#svg', '//\[([+*])([a-z]+)\] *(\S*)\n/img/'
+    regexper.render '#svg', exp
+    $('#regexper-result').html $('#regexper-render').html()
     return
 
   time = 0
 
   $('#match').click ->
+    val = $('#match-input').val()
+    exp = $('#regexp-input').val()
+    if !val
+       alert 'Enter something that u want to match'
+       return false
+    if !exp
+      alert 'Enter JavaScript-style regular expression to display'
+      return false
+
     time++
     $('#found-times').html time
     match_times = $ '#match-times'
     result = $ '#match-result'
     result.empty()
-    val = $('#match-input').val()
-    reg = $('#regexp-input').val()
-    if !val || !reg
-       match_times.html 0
-       return true
-    arr = reg.match /(\/?)(.+)(\1)([ig]*)/
+    arr = exp.match /(\/?)(.+)(\1)([ig]*)/
     reg = new RegExp arr[2], arr[4]
     count = 0
 

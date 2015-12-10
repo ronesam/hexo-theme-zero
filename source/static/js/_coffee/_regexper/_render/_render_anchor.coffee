@@ -1,3 +1,3 @@
-_anchor = (group, exp)->
+_renderAnchor = (group, exp)->
   box = group.getBBox()
   _renderLabel group, [exp]

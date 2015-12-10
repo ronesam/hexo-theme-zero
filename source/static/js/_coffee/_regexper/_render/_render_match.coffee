@@ -1,8 +1,8 @@
-_match = (group, res)->
+_renderMatch = (group, res)->
   group.transform Snap.matrix().translate 10, res.match
  
   #渲染子匹配
-  _render(group, exp.type, exp.content) for exp in res.exps
+  _renderGroup group, exp.type, exp.content for exp in res.exps
 
   #展开并连接
   items = group.selectAll(res.svg + ' > g > g > g')

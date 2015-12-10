@@ -1,21 +1,21 @@
-render = (svg, expression)->
-  res = parser expression
+_render = (svg, exp)->
+  res = _parser exp
   #这里保留一下，match的时候作为选择器要用
   res.svg = svg
-  #----------------------
-  svg = Snap(svg)
-  group = _render(svg, 'root', res)
+  svg = Snap svg
+  group = _renderGroup svg, 'Root', res
 
   #适合画布
   box = group.getBBox()
   group.transform Snap.matrix().translate 10 - box.x, 10 - box.y
   svg.attr width: box.width + 20, height: box.height + 20
 
-_render = (svg, type, exp)->
+_renderGroup = (svg, type, exp)->
   #先按类型组合
-  group = svg.group().addClass(type)
-  #按照类型调用处理函数，并返回
-  (eval('_' + type))(group, exp)
+  class_name = type
+  group = svg.group().addClass(class_name.toLowerCase())
+  #注意type首字母大写
+  (eval('_render' + type)) group, exp
 
 #渲染纯文本
 _renderLabel = (group, text)->
@@ -35,4 +35,4 @@ _renderLabel = (group, text)->
 _renderLabeledBox = (svg, text)->
   return
 
-exports.render = render
+exports.render = _render

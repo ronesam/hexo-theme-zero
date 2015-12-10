@@ -1,4 +1,4 @@
-_literal = (group, exp)->
+_renderLiteral = (group, exp)->
   label = group.group()
   _renderLabel label, ['\u201c', exp, '\u201d']
   spans = label.selectAll('tspan');

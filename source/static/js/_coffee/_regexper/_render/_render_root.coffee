@@ -1,11 +1,11 @@
-_root = (group, res)->
+_renderRoot = (group, res)->
   #标记层
-  if res.flags.length > 0
-    flag = group.text(0, 0, 'Flags: ' + res.flags.join(', '));
+  if res.flag.length > 0
+    flag = group.text(0, 0, 'Flag: ' + res.flag.join(', '));
   
-  res.match = if res.flags.length > 0 then flag.getBBox().height else 0
+  res.match = if res.flag.length > 0 then flag.getBBox().height else 0
   #匹配层
-  match = _render(group, 'match', res)
+  match = _renderGroup group, 'Match', res
 
   box = match.getBBox()
 
