@@ -2,8 +2,10 @@
 var _parser;
 
 _parser = function(exp) {
-  var result;
+  var reg, result;
   result = {};
+  reg = /\/([igm]{0,3})$/;
+  reg = exp.match;
   result.flag = _parserFlag(exp);
   result.exps = [
     {

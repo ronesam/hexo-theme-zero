@@ -1,5 +1,8 @@
 _parser = (exp)->
   result = {}
+  reg = /\/([igm]{0,3})$/
+  reg = exp.match 
+  #解析标志位
   result.flag = _parserFlag exp
   result.exps = [
     {
