@@ -18,4 +18,5 @@ cdn:
   prefix: /static/
   #prefix + favicon is real url
   favicon: img/favicon.ico
-  lib: //cdn.bootcss.com/
+  #lib: //cdn.bootcss.com/
+  lib: /static/
