@@ -7,14 +7,10 @@ aside
     li(title="全屏", class="icon-fullscreen")
 
   ul.page  
-    if page.prev
-      li(title= page.prev.title, class="icon-prev")
-        a(href= url_for(page.prev.path))   
+    li.icon-prev
     li(title="目录", class="icon-summary", data-remodal-target="summary")
-    if page.next
-      li(title= page.next.title, class="icon-next")
-        a(href= url_for(page.next.path))
-
+    li.icon-next
+      
 .remodal(data-remodal-id='toc', data-remodal-options="hashTracking: false")
   button.remodal-close(data-remodal-action='close')
   h3 索引

@@ -18,11 +18,9 @@ $ ->
     return
 
   #No.2 索引
-  toc = $ '[data-remodal-id=toc]'
-  inst = toc.remodal()
-  toc.click -> 
-    inst.close()
-    return
+  toc = $ 'article.toc'
+  if '' == toc.html()
+    $('.icon-toc').hide()
 
   #No.3 评论
   $(document).on 'opening', '[data-remodal-id=comment]', ->
@@ -41,7 +39,7 @@ $ ->
     return
 
   #No.5 目录
-  $(document).on 'opening', '[data-remodal-id=summary]', ->
+  $ ->
     path = window.location.pathname
     arr_path = path.split '/'
     #过滤掉最后两个，回到上级目录
@@ -53,6 +51,18 @@ $ ->
       option = $('article.summary a[href="' + path + '"]')
       file_name = option.html()
       option.html('<span style="color:orange">' + file_name + '</span>')
+
+      if option.parent().prev().length
+        $('.icon-prev').html option.parent().prev().html()
+        $('.icon-prev a').html ''
+      else
+        $('.icon-prev').hide()
+
+      if option.parent().next().length
+        $('.icon-next').html option.parent().next().html()
+        $('.icon-next a').html ''
+      else
+        $('.icon-next').hide()
       return
     return
   return
