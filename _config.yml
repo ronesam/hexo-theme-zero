@@ -1,9 +1,9 @@
 menu:
-  前端工程: /engineer/summary/
+  前端工程: /front-end/summary/
   数据银行: /access/summary/
   支付革命: /warfare/summary/
   海量服务: /ocean/summary/
-  About:    /about/summary/
+  About:   /about/summary/
 # rss: /atom.xml
 
 archive_date_format: MMM DD
