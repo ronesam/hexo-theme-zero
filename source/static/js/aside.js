@@ -52,17 +52,22 @@ $(function() {
       option = $('article.summary a[href="' + path + '"]');
       file_name = option.html();
       option.html('<span style="color:orange">' + file_name + '</span>');
-      if (option.parent().prev().length) {
+      var len_prev = option.parent().prev().length;
+      var len_next = option.parent().next().length;
+      if (len_prev) {
         $('.icon-prev').html(option.parent().prev().html());
         $('.icon-prev a').html('');
       } else {
         $('.icon-prev').hide();
       }
-      if (option.parent().next().length) {
+      if (len_next) {
         $('.icon-next').html(option.parent().next().html());
         $('.icon-next a').html('');
       } else {
         $('.icon-next').hide();
+      }
+      if (!len_prev && !len_next) {
+        $('aside ul.page').hide();
       }
     });
   });

@@ -1,8 +1,8 @@
 menu:
-  前端工程: /front-end/summary/
-  数据银行: /access/summary/
-  支付革命: /warfare/summary/
-  海量服务: /ocean/summary/
+  界面交互（风）: /air/summary/
+  表现控制（火）: /fire/summary/
+  海量服务（水）: /water/summary/
+  数据银行（地）: /earth/summary/
   About:   /about/summary/
 # rss: /atom.xml
 
