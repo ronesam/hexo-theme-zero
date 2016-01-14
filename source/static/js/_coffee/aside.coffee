@@ -42,9 +42,8 @@ $ ->
   $ ->
     path = window.location.pathname
     arr_path = path.split '/'
-    #过滤掉最后两个，回到上级目录
-    arr_url = []
-    arr_url.push dir for dir, i in arr_path when i < 3
+    #回到根目录
+    arr_url = arr_path.slice 0, 2
     url = '//' + window.location.host + arr_url.join('/') + '/summary/index.json'
     $.getJSON url, (json)->
       $('article.summary').html json.summary
