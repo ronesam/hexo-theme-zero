@@ -47,6 +47,7 @@ $ ->
     url = '//' + window.location.host + arr_url.join('/') + '/summary/index.json'
     $.getJSON url, (json)->
       $('article.summary').html json.summary
+      $('article.summary blockquote').hide()
       option = $('article.summary a[href="' + path + '"]')
       file_name = option.html()
       option.html('<span style="color:orange">' + file_name + '</span>')

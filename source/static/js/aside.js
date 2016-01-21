@@ -43,6 +43,7 @@ $(function() {
     $.getJSON(url, function(json) {
       var file_name, option;
       $('article.summary').html(json.summary);
+      $('article.summary blockquote').hide();
       option = $('article.summary a[href="' + path + '"]');
       file_name = option.html();
       option.html('<span style="color:orange">' + file_name + '</span>');
