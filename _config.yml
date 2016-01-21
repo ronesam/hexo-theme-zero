@@ -1,6 +1,10 @@
 menu:
-  界面交互（风）: /air/summary/
   About:   /about/summary/
+  界面交互（风）: /air/summary/
+#  表现控制（火）: /fire/summary/
+#  海量服务（水）: /water/summary/
+#  数据银行（地）: /earth/summary/
+  
 # rss: /atom.xml
 
 archive_date_format: MMM DD
